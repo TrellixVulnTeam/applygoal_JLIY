@@ -1,0 +1,62 @@
+
+{% extends 'Base/base.html' %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+{% include "Base/gradient_header.html" %}
+<section>
+  <div class="block no-padding  gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="inner2">
+            <div class="inner-title2">
+              <h3>Register</h3>
+              <span>Keep up to date with the latest news</span>
+            </div>
+            <div class="page-breacrumbs">
+              <ul class="breadcrumbs">
+                <li><a href="#" title="">Home</a></li>
+                <li><a href="#" title="">Pages</a></li>
+                <li><a href="#" title="">Register</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="block remove-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="account-popup-area signup-popup-box static">
+            <div class="account-popup">
+              <h3>Sign Up</h3>
+              <span>Lorem ipsum dolor sit amet consectetur adipiscing elit odio duis risus at lobortis ullamcorper</span>
+
+      <h2>Sign up as a {{ user_type }}</h2>
+      <form method="post" novalidate>
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{ next }}">
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-success">Sign up</button>
+        <div class="extra-login">
+          <span>Or</span>
+          <div class="login-social">
+            <a class="fb-login" href="#" title=""><i class="fa fa-facebook"></i></a>
+            <a class="tw-login" href="#" title=""><i class="fa fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+    </div><!-- SIGNUP POPUP -->
+  </div>
+</div>
+</div>
+</div>
+</section>
+{% endblock %}

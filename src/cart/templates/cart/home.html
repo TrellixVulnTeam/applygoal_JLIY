@@ -1,0 +1,112 @@
+{% extends "Base/base.html" %}
+
+
+{% block content %}
+{% include "Base/gradient_header.html" %}
+<section>
+  <div class="block no-padding">
+    <div class="container">
+       <div class="row no-gape">
+         {% if cart.programmes.exists %}
+        <div class="col-lg-9 column">
+          <div class="padding-left">
+            <div class="manage-jobs-sec">
+              <h3>Cart</h3>
+              <table class="pkges-table">
+                <thead>
+                  <tr>
+                    <td>Transaction ID</td>
+                    <td>Programme Name</td>
+                    <td>Fee</td>
+                    <!-- <td>Total Jobs/CVs</td>
+                    <td>Used</td>
+                    <td>Remaining</td>
+                    <td>Status</td> -->
+                  </tr>
+                </thead>
+                <tbody>
+                    {% for programme in cart.programmes.all %}
+                  <tr>
+                    <td scope="row">{{ forloop.counter }}</td>
+                    <td><a href='{{ programme.get_absolute_url }}'>{{ programme.title }}</a>{% include 'programmes/snippets/update-cart.html' with programme=programme cart=cart in_cart=True %}</td>
+                    <td>{{ programme.fee }}</td>
+                  </tr>
+                  {% endfor %}
+                  </tr>
+                  <tr>
+                    <td colspan="2"></td>
+                    <td><b>Subtotal</b><br><span class='cart-subtotal'>{{ cart.subtotal }} $</span></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"></td>
+                    <td><b>Total</b><br> <span class='cart-total'>{{ cart.total }} $</span></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"></td>
+                    <td><a class='btn btn-lg btn-success' href='{% url "cart:checkout" %}'>Checkout</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+       </div>
+    </div>
+  </div>
+</section>
+{% else %}
+<p class='lead'>Cart is empty</p>
+{% endif %}
+
+
+
+
+
+<!-- <h1>Cart</h1>
+
+{% if cart.programmes.exists %}
+<table class="table cart-table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>programme Name</th>
+      <th>programme Price</th>
+    </tr>
+  </thead>
+  <tbody class="cart-body" >
+    {% for programme in cart.programmes.all %}
+    <tr class='cart-programme'>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td><a href='{{ programme.get_absolute_url }}'>{{ programme.title }}</a>
+
+      </td>
+      <td>{{ programme.fee }}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="2"></td>
+      <td><b>Subtotal</b> $<span class='cart-subtotal'>{{ cart.subtotal }}</span></td>
+    </tr>
+    <tr>
+      <td colspan="2"></td>
+      <td><b>Total</b> $<span class='cart-total'>{{ cart.total }}</span></td>
+    </tr>
+    <tr>
+      <td colspan="2"></td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+<div class='cart-item-remove-form' style='display:none'>
+
+
+  </div>
+
+{% else %}
+<p class='lead'>Cart is empty</p>
+{% endif %} -->
+
+
+{% endblock %}

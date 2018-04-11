@@ -1,0 +1,32 @@
+{% load static %}
+
+<header class="gradient">
+  <div class="menu-sec">
+    <div class="container">
+      <div class="logo">
+        <a href="{% url 'home' %}" title=""><img class="hidesticky" src='{% static "images/logo1.png" %}' alt="" /><img class="showsticky" src='{% static "images/logo-1.png" %}' alt="" /></a>
+      </div><!-- Logo -->
+      {% if request.user.is_authenticated %}
+
+          <div class="my-profiles-sec">
+            <span><img src="http://placehold.it/50x50" alt="" /> Ali TUFAN <i class="la la-bars"></i></span>
+          </div>
+          <div class="wishlist-dropsec">
+            <span><a href="cart"><i class="la la-shopping-cart"></i></a></span>
+          </div>
+
+        {% else %}
+        <div class="btn-extars">
+          <a href="#" title="" class="post-job-btn"><i class="la la-plus"></i>New</a>
+          <ul class="account-btns">
+            <li class="signup-popup"><a href="{% url 'accounts:register' %}" title=""><i class="la la-key"></i> Sign Up</a></li>
+            <li class="signin-popup"><a href="{% url 'accounts:login' %}"><i class="la la-external-link-square"></i> Login</a></li>
+        </ul>
+      </div>
+        {% endif %}
+      <!-- Btn Extras -->
+      {% include "Base/nav.html" %}
+    </div>
+
+  </div>
+</header>

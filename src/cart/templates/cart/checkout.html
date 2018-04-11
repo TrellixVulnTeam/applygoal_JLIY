@@ -1,0 +1,27 @@
+{% extends "Base/base.html" %}
+
+
+{% block content %}
+{% include "Base/gradient_header.html" %}
+<h1>Checkout</h1>
+
+{% if not billing_profile %}
+
+    <p class='lead'>Login</p>
+    {% include 'accounts/snippets/form.html' with form=login_form next_url=request.build_absolute_uri %}
+</div>
+
+{% url "accounts:guest_register_url" as guest_register_url %}
+{% include 'accounts/snippets/guest_form.html' with form=guest_form next_url=request.build_absolute_uri action_url=guest_register_url %}
+</div>
+
+{% else %}
+    <h1>Checkout</h1>
+
+    <p>Cart Total: {{ object.cart.total }}</p>
+    <p></p>
+    <p>Order Total: {{ object.total }}</p>
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,463 @@
+
+{% extends "Base/base.html" %}
+{% load static %}
+{% block content %}
+{% include "Base/stick2_header.html" %}
+	<section>
+		<div class="block no-padding">
+			<div class="container fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="main-featured-sec style2">
+							<ul class="main-slider-sec style2  text-arrows">
+								<li class="slideHome"><img src="https://1tulatv.ru/sites/default/files/tvorcheskij-besporjadok.jpg" alt="" /></li>
+								<li class="slideHome"><img src='{% static "images/study.jpg" %}' alt="" /></li>
+								<li class="slideHome"><img src="http://grandetest.com/theme/jobhunt-html/images/resource/mslider3.jpg" alt="" /></li>
+							</ul>
+							<div class="job-search-sec">
+								<div class="job-search style2">
+									<h3>Explore all your oppurtunities</h3>
+									<span>Discover thousands of degrees worldwide!</span>
+									<div class="search-job2">
+										<form method="GET"  action='{% url "search:query" %}'>
+											<div class="row no-gape">
+												<div class="col-lg-4 col-md-3 col-sm-4">
+													<div class="job-field">
+														<input type="text" placeholder="Search Keywords" name='q' value ='{{request.GET.q}}' />
+													</div>
+												</div>
+												<div class="col-lg-3 col-md-3 col-sm-4">
+													<div class="job-field">
+														<select data-placeholder="All Regions" class="chosen-city">
+															<option>Europe</option>
+															<option>Asia</option>
+															<option>North America</option>
+															<option>South America</option>
+															<option>Africa</option>
+															<option>Australia</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-lg-3 col-md-3 col-sm-4">
+													<div class="job-field">
+														<select data-placeholder="Any category" class="chosen-city">
+															<option>Bachelor</option>
+															<option>Master</option>
+															<option>Doctorate</option>
+															<option>Academic Certificate</option>
+															<option>Professional Degree</option>
+														</select>
+													</div>
+												</div>
+												<div class="col-lg-2  col-md-3 col-sm-12">
+													<button type="submit">FIND DEGREE <i class="la la-search"></i></button>
+												</div>
+											</div>
+										</form>
+									</div><!-- Job Search 2 -->
+									<div class="quick-select-sec">
+										<div class="row">
+											<div class="col-lg-3 col-md-3 col-sm-3">
+												<div class="quick-select">
+													<a href="#" title="">
+														<i class="la la-rocket"></i>
+														<span>Engineering</span>
+														<p>(22 open programmes)</p>
+													</a>
+												</div><!-- Quick Select -->
+											</div>
+											<div class="col-lg-3 col-md-3 col-sm-3">
+												<div class="quick-select">
+													<a href="#" title="">
+														<i class="la la-medkit"></i>
+														<span>Health</span>
+														<p>(06 open programmes)</p>
+													</a>
+												</div><!-- Quick Select -->
+											</div>
+											<div class="col-lg-3 col-md-3 col-sm-3">
+												<div class="quick-select">
+													<a href="#" title="">
+														<i class="la la-music "></i>
+														<span>Fine Arts</span>
+														<p>(03 open programmes)</p>
+													</a>
+												</div><!-- Quick Select -->
+											</div>
+											<div class="col-lg-3 col-md-3 col-sm-3">
+												<div class="quick-select">
+													<a href="#" title="">
+														<i class="la la-users"></i>
+														<span>Social Sciences</span>
+														<p>(03 open pprogrammes)</p>
+													</a>
+												</div><!-- Quick Select -->
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="scroll-here">
+		<div class="block">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="heading">
+							<h2>Fields of Study</h2>
+							<span>37 programmes live - 0 added today.</span>
+						</div><!-- Heading -->
+						<div class="cat-sec">
+							<div class="row no-gape">
+								<div class="col-lg-3 col-md-3 col-sm-6">
+									<div class="p-category">
+										<a href="#" title="">
+											<i class="la la-paint-brush"></i>
+											<span>Fine Arts</span>
+											<p>(22 open positions)</p>
+										</a>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6">
+									<div class="p-category">
+										<a href="#" title="">
+											<i class="la la-graduation-cap"></i>
+											<span>Education</span>
+											<p>(6 open positions)</p>
+										</a>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6">
+									<div class="p-category">
+										<a href="#" title="">
+											<i class="la la-line-chart "></i>
+											<span>Economics</span>
+											<p>(3 open positions)</p>
+										</a>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6">
+									<div class="p-category">
+										<a href="#" title="">
+											<i class="la la-users"></i>
+											<span>Social sciecnes</span>
+											<p>(3 open positions)</p>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="cat-sec">
+							<div class="row no-gape">
+								<div class="col-lg-3 col-md-3 col-sm-6">
+									<div class="p-category">
+										<a href="#" title="">
+											<i class="la la-rocket"></i>
+											<span>Engineering</span>
+											<p>(22 open positions)</p>
+										</a>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6">
+									<div class="p-category">
+										<a href="#" title="">
+											<i class="la 	la-eyedropper"></i>
+											<span>Natural Sciences</span>
+											<p>(6 open positions)</p>
+										</a>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6">
+									<div class="p-category">
+										<a href="#" title="">
+											<i class="la la-building"></i>
+											<span>Architecture</span>
+											<p>(3 open positions)</p>
+										</a>
+									</div>
+								</div>
+								<div class="col-lg-3 col-md-3 col-sm-6">
+									<div class="p-category">
+										<a href="#" title="">
+											<i class="la la-user-md"></i>
+											<span>Health</span>
+											<p>(3 open positions)</p>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-12">
+						<div class="browse-all-cat">
+							<a href="#" title="">Browse All Fields</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="block double-gap-top double-gap-bottom">
+			<div data-velocity="-.1" style="background: url(http://maybusch.com/wp-content/uploads/2015/08/office-desk-with-coffee-cup.jpg) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible layer color"></div><!-- PARALLAX BACKGROUND IMAGE -->
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="simple-text-block">
+							<h3>Make a Difference with Your Online Resume!</h3>
+							<span>Make a Difference with Your Online Resume!</span>
+							<a href="#" title="">Create an Account</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+	<section>
+		<div class="block gray">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="heading">
+							<h2>Recent Programmes</h2>
+							<span>Latest calls by universities!</span>
+						</div><!-- Heading -->
+						<div class="job-grid-sec">
+							<div class="row">
+								<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+									<div class="job-grid">
+										<div class="job-title-sec">
+											<div class="c-logo"> <img src="http://placehold.it/235x115" alt="" /> </div>
+											<h3><a href="#" title="">Economics</a></h3>
+											<span>Massimo Artemisis</span>
+											<span class="fav-job"><i class="la la-heart-o"></i></span>
+										</div>
+										<span class="job-lctn">Sacramento, California</span>
+										<a  href="#" title="">APPLY NOW</a>
+									</div><!-- JOB Grid -->
+								</div>
+								<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+									<div class="job-grid">
+										<div class="job-title-sec">
+											<div class="c-logo"> <img src="http://placehold.it/235x115" alt="" /> </div>
+											<h3><a href="#" title="">Marketing</a></h3>
+											<span>Massimo Artemisis</span>
+											<span class="fav-job"><i class="la la-heart-o"></i></span>
+										</div>
+										<span class="job-lctn">Sacramento, California</span>
+										<a  href="#" title="">APPLY NOW</a>
+									</div><!-- JOB Grid -->
+								</div>
+								<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+									<div class="job-grid">
+										<div class="job-title-sec">
+											<div class="c-logo"> <img src="http://placehold.it/235x115" alt="" /> </div>
+											<h3><a href="#" title="">Literature</a></h3>
+											<span>Altes Bank</span>
+											<span class="fav-job"><i class="la la-heart-o"></i></span>
+										</div>
+										<span class="job-lctn">Sacramento, California</span>
+										<a  href="#" title="">APPLY NOW</a>
+									</div><!-- JOB Grid -->
+								</div>
+								<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+									<div class="job-grid">
+										<div class="job-title-sec">
+											<div class="c-logo"> <img src="http://placehold.it/235x115" alt="" /> </div>
+											<h3><a href="#" title="">Computer Science</a></h3>
+											<span>Massimo Artemisis</span>
+											<span class="fav-job"><i class="la la-heart-o"></i></span>
+										</div>
+										<span class="job-lctn">Sacramento, California</span>
+										<a  href="#" title="">APPLY NOW</a>
+									</div><!-- JOB Grid -->
+								</div>
+								<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+									<div class="job-grid">
+										<div class="job-title-sec">
+											<div class="c-logo"> <img src="http://placehold.it/235x115" alt="" /> </div>
+											<h3><a href="#" title="">Web Designer / Developer</a></h3>
+											<span>MediaLab</span>
+											<span class="fav-job"><i class="la la-heart-o"></i></span>
+										</div>
+										<span class="job-lctn">Sacramento, California</span>
+										<a  href="#" title="">APPLY NOW</a>
+									</div><!-- JOB Grid -->
+								</div>
+								<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+									<div class="job-grid">
+										<div class="job-title-sec">
+											<div class="c-logo"> <img src="http://placehold.it/235x115" alt="" /> </div>
+											<h3><a href="#" title="">Web Designer / Developer</a></h3>
+											<span>StarHealth</span>
+											<span class="fav-job"><i class="la la-heart-o"></i></span>
+										</div>
+										<span class="job-lctn">Sacramento, California</span>
+										<a  href="#" title="">APPLY NOW</a>
+									</div><!-- JOB Grid -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-12">
+						<div class="browse-all-cat">
+							<a href="#" title="" class="style2">Load more listings</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="block no-padding">
+			<div class="container fluid">
+				<div class="row">
+					<div class="col-lg-6">
+						<div data-velocity="-.1" style="background: url(https://upload.wikimedia.org/wikipedia/en/6/6d/Timothy_Dwight_College.jpg) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible layer blackish"></div><!-- PARALLAX BACKGROUND IMAGE -->
+						<div class="who-am">
+							<h3>I AM UNIVERSITY!</h3>
+							<p>One of our One of our jobs has some kind of flexibility jobs has some kind of flexibility option such as telecommuting, a part-time schedule or a flexible or flextime.</p>
+							<a href="#" title="">Post new programme</a>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div data-velocity="-.1" style="background: url(http://www.csuohio.edu/cehs/sites/csuohio.edu.cehs/files/o-SMILING-STUDENTS-facebook.jpg) repeat scroll 50% 422.28px transparent;" class="parallax scrolly-invisible layer color dark"></div><!-- PARALLAX BACKGROUND IMAGE -->
+						<div class="who-am flip">
+							<h3>I AM STUDENT!</h3>
+							<p>One of our One of our jobs has some kind of flexibility jobs has some kind of flexibility option such as telecommuting, a part-time schedule or a flexible or flextime.</p>
+							<a href="#" title="">Browse Universities</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section>
+		<div class="block">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="heading">
+							<h2>How It Works</h2>
+							<span>Each month, more than 7 million users turn to website in their search for study, making over <br />160,000 applications every day.
+							</span>
+						</div><!-- Heading -->
+						<div class="how-to-sec">
+							<div class="how-to">
+								<span class="how-icon"><i class="la la-user"></i></span>
+								<h3>Register an account</h3>
+								<p>You can register as university or student</p>
+							</div>
+							<div class="how-to">
+								<span class="how-icon"><i class="la la-file-archive-o"></i></span>
+								<h3>Specify & search your programme</h3>
+								<p>Create your resume  </p>
+							</div>
+							<div class="how-to">
+								<span class="how-icon"><i class="la la-list"></i></span>
+								<h3>Apply for programme</h3>
+								<p>Apply for the programme</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="block no-padding">
+			<div data-velocity="-.2" style="background: url(http://grandetest.com/theme/jobhunt-html/images/resource/parallax7.jpg) repeat scroll 50% 422.28px transparent ;" class="parallax scrolly-invisible dark"></div><!-- PARALLAX BACKGROUND IMAGE -->
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="download-sec">
+							<div class="download-text">
+								<h3>Download & Enjoy</h3>
+								<p>Search, find and apply for jobs directly on your mobile device or desktop Manage all of the jobs you have applied to from a convenience secure dashboard.</p>
+								<ul>
+									<li>
+										<a href="#" title="">
+											<i class="la la-apple"></i>
+											<span>App Store</span>
+											<p>Available now on the</p>
+										</a>
+									</li>
+									<li>
+										<a href="#" title="">
+											<i class="la la-android"></i>
+											<span>Google Play</span>
+											<p>Get in on</p>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="download-img">
+								<img src="https://mockuphone.com/static/images/devices/apple-iphone5-black-portrait.png" alt="" />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<div class="block">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="heading">
+							<h2>Companies We've Helped</h2>
+							<span>Some of the companies we've helped recruit excellent applicants over the years.</span>
+						</div><!-- Heading -->
+						<div class="comp-sec">
+							<div class="company-img">
+								<a href="#" title=""><img src="http://placehold.it/180x80" alt="" /></a>
+							</div><!-- Client  -->
+							<div class="company-img">
+								<a href="#" title=""><img src="http://placehold.it/180x80" alt="" /></a>
+							</div><!-- Client  -->
+							<div class="company-img">
+								<a href="#" title=""><img src="http://placehold.it/180x80" alt="" /></a>
+							</div><!-- Client  -->
+							<div class="company-img">
+								<a href="#" title=""><img src="http://placehold.it/180x80" alt="" /></a>
+							</div><!-- Client  -->
+							<div class="company-img">
+								<a href="#" title=""><img src="http://placehold.it/180x80" alt="" /></a>
+							</div><!-- Client  -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	<section>
+		<div class="block no-padding">
+			<div class="container fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="simple-text">
+							<h3>Gat a question?</h3>
+							<span>We're here to help. Check out our FAQs, send us an email or call us at 1 (800) 555-5555</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+{% endblock %}

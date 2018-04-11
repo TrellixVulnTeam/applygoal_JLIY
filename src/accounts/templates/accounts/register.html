@@ -1,0 +1,91 @@
+{% extends "Base/base.html" %}
+{% block content %}
+{% include "Base/gradient_header.html" %}
+<section>
+  <div class="block no-padding  gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="inner2">
+            <div class="inner-title2">
+              <h3>Register</h3>
+              <span>Keep up to date with the latest news</span>
+            </div>
+            <div class="page-breacrumbs">
+              <ul class="breadcrumbs">
+                <li><a href="#" title="">Home</a></li>
+                <li><a href="#" title="">Pages</a></li>
+                <li><a href="#" title="">Register</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="block remove-bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="account-popup-area signup-popup-box static">
+            <div class="account-popup">
+              <h3>Sign Up</h3>
+              <span>Lorem ipsum dolor sit amet consectetur adipiscing elit odio duis risus at lobortis ullamcorper</span>
+
+              <form method="POST">{% csrf_token %}
+                <ul id="id_status">
+                  <div class="select-user">
+                  <a href="{% url 'profiles:student_signup' %}" class="btn btn-student btn-lg" role="button">I'm a student</a>
+                  <a href="{% url 'profiles:teacher_signup' %}" class="btn btn-student btn-lg" role="button">I'm a student</a>
+                  <br>
+                  <!-- <div class="select-user">
+                  {% for a,b in form.status.field.choices %}
+                        <span>{{ b }}</span>
+                    {% endfor %}
+                    </div> -->
+                    <!-- {{ form.status }} -->
+
+                <div class="cfield">
+                  {{ form.username }}
+                  <i class="la la-user"></i>
+                </div>
+                <div class="cfield">
+                  {{ form.password }}
+                  <i class="la la-key"></i>
+                </div>
+                <div class="cfield">
+                  {{ form.email }}
+                  <i class="la la-envelope-o"></i>
+                </div>
+                <!-- <div class="dropdown-field">
+                  <select data-placeholder="Please Select Specialism" class="chosen">
+                    <option>Web Development</option>
+                    <option>Web Designing</option>
+                    <option>Art & Culture</option>
+                    <option>Reading & Writing</option>
+                  </select>
+                </div>
+                <div class="cfield">
+                  <input type="text" placeholder="Phone Number" />
+                  <i class="la la-phone"></i>
+                </div> -->
+                <button type="submit">Signup</button>
+              </form>
+              <div class="extra-login">
+                <span>Or</span>
+                <div class="login-social">
+                  <a class="fb-login" href="#" title=""><i class="fa fa-facebook"></i></a>
+                  <a class="tw-login" href="#" title=""><i class="fa fa-twitter"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- SIGNUP POPUP -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

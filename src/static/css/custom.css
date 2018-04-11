@@ -1,0 +1,51 @@
+label::before {
+    content: "";
+    border: 0px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+}
+.select-user > span{
+  padding: 0px;
+}
+.select-user > span > li{
+  margin: 0px;
+  list-style: none;
+}
+.select-user > span > li> label{
+  padding-top: 13px;
+padding-bottom: 30px;
+padding-right: 30px;
+}
+.select-user{
+  margin-bottom: 20px;
+  margin-top:0px;
+}
+
+.download-text ul li a:hover {
+    background: #fb236a;
+    border-color: #fb236a;
+}
+
+.how-icon {
+    float: none;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 2px dashed;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    line-height: 94px;
+    font-size: 53px;
+    text-align: center;
+    color: rgba(251,35,106,1);
+    border-color: rgba(16,25,93,1);
+}
+body{
+  background: white;
+}
