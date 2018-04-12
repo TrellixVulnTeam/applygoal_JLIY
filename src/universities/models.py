@@ -2,19 +2,23 @@ import random
 import os
 from django.db.models import Q
 from django.db import models
-from django.db.models.signals import pre_save,post_save
+from django.db.models.signals import pre_save, post_save
 from .utils import unique_slug_generator
+
 
 def get_filename_ext(filepath):
     base_name = os.path.basename(filepath)
     name, ext = os.path.splitext(base_name)
-    return name,ext
+    return name, ext
 
-def upload_image_path(instance,filename):
-    new_filename = random.randint(1,99999)
-    name,ext = get_filename_ext(filename)
-    final_filename = '{new_filename}{ext}'.format(new_filename=new_filename,ext=ext)
-    return "universities/{new_filename}/{final_filename}".format(new_filename=new_filename,final_filename = final_filename)
+
+def upload_image_path(instance, filename):
+    new_filename = random.randint(1, 99999)
+    name, ext = get_filename_ext(filename)
+    final_filename = '{new_filename}{ext}'.format(new_filename=new_filename, ext=ext)
+    return "universities/{new_filename}/{final_filename}".format(new_filename=new_filename,
+                                                                 final_filename=final_filename)
+
 
 class UniversityQuerySet(models.query.QuerySet):
     # def active(self):
@@ -25,9 +29,11 @@ class UniversityQuerySet(models.query.QuerySet):
 
     def search(self, query):
         lookups = (Q(title__icontains=query) |
-                  Q(description__icontains=query)
-                  )
+                   Q(description__icontains=query)
+                   )
         return self.filter(lookups).distinct()
+
+
 class UniversityManager(models.Manager):
 
     def get_queryset(self):
@@ -36,8 +42,8 @@ class UniversityManager(models.Manager):
     # def all(self):
     #     return self.get_queryset().active()
 
-    def get_by_id(self,pk):
-        qs = self.get_queryset().filter(id =pk)
+    def get_by_id(self, pk):
+        qs = self.get_queryset().filter(id=pk)
         if qs.count() == 1:
             return qs.first()
         return None
@@ -46,13 +52,11 @@ class UniversityManager(models.Manager):
         return self.get_queryset().search(query)
 
 
-
-
 class University(models.Model):
-    title       = models.CharField(max_length=120)
-    slug        = models.SlugField(blank=True,unique=True)
+    title = models.CharField(max_length=120)
+    slug = models.SlugField(blank=True, unique=True)
     description = models.TextField()
-    image       = models.ImageField(upload_to=upload_image_path,null=True,blank=True)
+    image = models.ImageField(upload_to=upload_image_path, null=True, blank=True)
 
     objects = UniversityManager()
 
@@ -61,11 +65,14 @@ class University(models.Model):
 
     def __unicode__(self):
         return self.title
+
     def get_absolute_url(self):
         return "/universities/{slug}/".format(slug=self.slug)
 
-def university_pre_save_receiver(sender,instance,*args,**kwargs):
+
+def university_pre_save_receiver(sender, instance, *args, **kwargs):
     if not instance.slug:
         instance.slug = unique_slug_generator(instance)
 
-pre_save.connect(university_pre_save_receiver,sender = University)
+
+pre_save.connect(university_pre_save_receiver, sender=University)
